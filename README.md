@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# QUILD — OSPC Platform
+
+**Open-Source Patent Commons** for managing the full lifecycle of research IP: from project inception and patent filing to validation, licensing, micro-ownership, royalties, and community governance.
+
+> Micro-Ownership · CV Engine · Royalties & Governance
+
+---
+
+## What is QUILD?
+
+QUILD is a modern, analytics-first control plane for open-source patent commons (OSPC). It gives research groups, startups, and patent pools a single workspace to run their IP portfolio like a business — tracking projects, patents, validations, revenue, contributors, and treasury in one place.
+
+It moves beyond classic IP management by modelling **micro-ownership** at the contributor level:
+
+- **OMU (On-chain Micro-ownership Units)** — a contributor's fractional ownership stake in a project, minted against contributions and governed by vesting schedules (cliff + duration).
+- **CV Engine** — a multi-dimensional "Computed Value" score that captures real contribution quality: commit weight, code review depth, test coverage, refactoring, ADRs, issue triage, benchmark improvements, and more.
+- **Royalties Engine** — automates gross settlement, a micropayment accumulator with per-project wallets, and tax compliance (TDS deduction) with payouts via UPI, bank transfer, RTGS, or crypto.
+
+## Features
+
+### Core
+- **Dashboard** — live KPIs (projects, active IPs, revenue, investors), portfolio trends, ownership distribution, and an activity feed.
+- **Projects** — full CRUD across AI, Biotech, Hardware, Blockchain, and Quantum; track TRL, treasuries, vesting config, and governance model (`omu_weighted` / `cv_weighted`).
+- **Validation** — scorecard-driven review workflow for technology, patents, trademarks, and copyrights with `pending → in_review → verified / rejected` states.
+- **IP / Patents** — patent portfolio management across provisional, full, PCT, and continuation filings; jurisdictions, inventors, valuation, and lifecycle status (draft → filed → examined → granted).
+- **Marketplace** — buy and sell technology, patents, trademarks, and data; price tracking, views/likes, and transaction history.
+- **Revenue** — full income/expense ledger across investments, licensing, sales, grants, and royalties.
+
+### OSPC Features
+- **Contributors** — CV Engine scoring across 16 contribution dimensions, OMU holdings with transferable/locked split, reputation scores, and badges.
+- **Governance** — decentralised decision-making with liquid democracy and conviction voting; proposals span parameter changes, licenses, budgets, and emergency interventions.
+- **Royalties** — real-time gross settlement, micropayment accumulator, per-contributor and per-project payout analytics, and tax-compliant payout rails (UPI, RTGS, bank transfer, crypto).
+
+## Tech Stack
+
+| Layer    | Tech |
+|----------|------|
+| Framework | [Next.js](https://nextjs.org) 16 (App Router) |
+| UI        | [React](https://react.dev) 19, [Tailwind CSS](https://tailwindcss.com) v4 |
+| Charts    | [Recharts](https://recharts.org) |
+| Animation | [Framer Motion](https://motion.dev) |
+| Icons     | [lucide-react](https://lucide.dev) |
+| Language  | [TypeScript](https://www.typescriptlang.org) |
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (v20+)
+- npm
+
+### Installation
 
 ```bash
+# 1. Clone the repository
+git clone https://github.com/Aryan0047-ak/QUILD.git
+cd QUILD
+
+# 2. Install dependencies
+npm install
+
+# 3. Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) — the app redirects to `/dashboard`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev       # start the development server
+npm run build     # create a production build
+npm run start     # serve the production build
+npm run lint      # run ESLint
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+QUILD/
+├── src/
+│   ├── app/               # App Router pages
+│   │   ├── dashboard/     # KPIs, charts, ownership, activity
+│   │   ├── projects/      # Project CRUD & portfolio
+│   │   ├── validation/    # Validation workflow
+│   │   ├── ip/            # Patent portfolio
+│   │   ├── marketplace/   # IP/technology listings
+│   │   ├── revenue/       # Income & expense ledger
+│   │   ├── contributors/  # CV Engine, OMU & reputation
+│   │   ├── governance/    # Proposals & conviction voting
+│   │   └── royalties/     # Royalties & micropayments
+│   ├── components/        # Sidebar, Header, Modal
+│   └── lib/               # Types, mock data, OSPC store
+├── package.json
+└── next.config.ts
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Roadmap
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [x] Project & IP portfolio management
+- [x] Validation & scoring workflow
+- [x] Marketplace & revenue tracking
+- [x] CV Engine scoring
+- [x] OMU issuance with vesting schedules
+- [x] Decentralised governance (conviction voting)
+- [x] Royalties engine with tax compliance
+- [ ] Backend persistence & auth
+- [ ] On-chain OMU & payout distribution
+- [ ] Analytics & reporting suite
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are welcome! Fork the repo, create a feature branch, and open a pull request. Make sure `npm run lint` and `npm run build` pass before submitting.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is licensed under the [MIT License](https://opensource.org/license/mit).
