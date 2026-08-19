@@ -114,6 +114,15 @@ export function OSPCProvider({ children }: { children: ReactNode }) {
     return omus.filter(o => o.contributorId === contributorId).reduce((sum, o) => sum + o.transferable, 0);
   }, [omus]);
 
+  const addActivity = useCallback((activityData: Omit<Activity, 'id' | 'createdAt'>) => {
+    const newActivity: Activity = {
+      ...activityData,
+      id: generateId(),
+      createdAt: new Date().toISOString(),
+    };
+    setActivities(prev => [newActivity, ...prev]);
+  }, []);
+
   const createProposal = useCallback(async (proposalData: Omit<Proposal, 'id' | 'createdAt' | 'status' | 'votesFor' | 'votesAgainst' | 'abstain' | 'conviction'>) => {
     const newProposal: Proposal = {
       ...proposalData,
@@ -134,7 +143,7 @@ export function OSPCProvider({ children }: { children: ReactNode }) {
       userName: contributors.find(c => c.id === proposalData.createdBy)?.name || 'Unknown',
       relatedId: newProposal.id,
     });
-  }, []);
+  }, [addActivity, contributors]);
 
   const vote = useCallback(async (proposalId: string, support: boolean | 'abstain', weight: number) => {
     setProposals(prev => prev.map(p => {
@@ -166,7 +175,7 @@ export function OSPCProvider({ children }: { children: ReactNode }) {
       userName: 'System',
       relatedId: newLicense.id,
     });
-  }, []);
+  }, [addActivity]);
 
   const purchaseListing = useCallback(async (listingId: string, buyerId: string) => {
     setListings(prev => prev.map(l => {
@@ -198,15 +207,6 @@ export function OSPCProvider({ children }: { children: ReactNode }) {
       createdAt: new Date().toISOString(),
     };
     setTransactions(prev => [...prev, newTransaction]);
-  }, []);
-
-  const addActivity = useCallback((activityData: Omit<Activity, 'id' | 'createdAt'>) => {
-    const newActivity: Activity = {
-      ...activityData,
-      id: generateId(),
-      createdAt: new Date().toISOString(),
-    };
-    setActivities(prev => [newActivity, ...prev]);
   }, []);
 
   const createProject = useCallback(async (projectData: Omit<Project, 'id' | 'createdAt' | 'updatedAt'>) => {

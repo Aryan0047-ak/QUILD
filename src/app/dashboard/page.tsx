@@ -61,10 +61,14 @@ export default function Dashboard() {
     return { totalProjects, activeIPs, totalRevenue, investorCount };
   }, [projects, patents, transactions]);
 
-  const chartData = useMemo(() => {
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
-    return months.map(month => ({ month, value: Math.floor(Math.random() * 500 + 300) }));
-  }, []);
+  const chartData = [
+    { month: 'Jan', value: 412 },
+    { month: 'Feb', value: 438 },
+    { month: 'Mar', value: 495 },
+    { month: 'Apr', value: 468 },
+    { month: 'May', value: 521 },
+    { month: 'Jun', value: 547 },
+  ];
 
   const ownershipData = [
     { name: 'Founders', value: 45, color: '#E5E5E5' },
