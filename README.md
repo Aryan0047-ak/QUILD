@@ -22,6 +22,12 @@
 <a href="https://github.com/Aryan0047-ak/QUILD/pulls">
 <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/Aryan0047-ak/QUILD?style=for-the-badge&logo=github&logoColor=white&color=gray">
 </a>
+<a href="https://github.com/Aryan0047-ak/QUILD/actions/workflows/ci.yml">
+<img alt="CI" src="https://github.com/Aryan0047-ak/QUILD/actions/workflows/ci.yml/badge.svg?style=for-the-badge">
+</a>
+<a href="https://github.com/Aryan0047-ak/QUILD/blob/main/LICENSE">
+<img alt="License MIT" src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge">
+</a>
 
 <img alt="Next.js" src="https://img.shields.io/badge/Next.js%2016-000000?style=for-the-badge&logo=nextdotjs&logoColor=white">
 <img alt="React 19" src="https://img.shields.io/badge/React%2019-61DAFB?style=for-the-badge&logo=react&logoColor=black">
@@ -206,21 +212,21 @@ QUILD/
 
 ## 🤝 Contributing
 
-Contributions are welcome! 🎉
+Contributions are welcome! 🎉 See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide.
 
 1. 🍴 Fork the repo
-2. 🌿 Create a feature branch (`git checkout -b feature/amazing`)
+2. 🌿 Create a feature branch (`git checkout -b feat/amazing`)
 3. 💾 Commit your changes (`git commit -m 'Add amazing feature'`)
-4. 🚀 Push to the branch (`git push origin feature/amazing`)
+4. 🚀 Push to the branch (`git push origin feat/amazing`)
 5. 🔀 Open a pull request
 
-Make sure `npm run lint` and `npm run build` pass before submitting.
+Make sure `npm run lint`, `npx tsc --noEmit`, and `npm run build` pass before submitting.
 
 ---
 
 ## 📜 License
 
-Distributed under the **MIT License**. See [`LICENSE`](https://opensource.org/license/mit) for more information.
+Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for more information.
 
 <br/>
 
