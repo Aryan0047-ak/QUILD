@@ -71,7 +71,7 @@ export const mockOMUs: OMU[] = [
 ];
 
 export const mockRoyaltyPayments: RoyaltyPayment[] = [
-  { id: 'r1', projectId: '1', amount: 85000, currency: 'USD', convertedInr: 7100000, recipientId: '1', status: 'completed', paymentMethod: 'bank_transfer', createdAt: '2026-04-01', processedAt: '2026-04-02', taxDeducted: 71000, netAmount: 6389000 },
+  { id: 'r1', projectId: '1', amount: 85000, currency: 'USD', convertedInr: 7100000, recipientId: '1', status: 'completed', paymentMethod: 'bank_transfer', createdAt: '2026-04-01', processedAt: '2026-04-02', taxDeducted: 71000, netAmount: 7029000 },
   { id: 'r2', projectId: '4', amount: 45000, currency: 'USD', convertedInr: 3765000, recipientId: '1', status: 'completed', paymentMethod: 'upi', createdAt: '2026-03-15', processedAt: '2026-03-16', taxDeducted: 37650, netAmount: 3727350 },
   { id: 'r3', projectId: '2', amount: 25000, currency: 'EUR', convertedInr: 2250000, recipientId: '2', status: 'completed', paymentMethod: 'bank_transfer', createdAt: '2026-03-01', processedAt: '2026-03-03', taxDeducted: 22500, netAmount: 2227500 },
   { id: 'r4', projectId: '5', amount: 120000, currency: 'USD', convertedInr: 10080000, recipientId: '2', status: 'completed', paymentMethod: 'rtgs', createdAt: '2026-02-15', processedAt: '2026-02-16', taxDeducted: 100800, netAmount: 9979200 },
